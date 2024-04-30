@@ -1,12 +1,12 @@
 <template>
-    <div class="body">
-
+    <div class="VueBody">
+      
     </div>
   </template>
   
   <script>
   export default {
-    name: 'body',
+    name: 'VueBody',
     props: {
       msg: String
     }
@@ -15,6 +15,8 @@
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
-  
+    .VueBody{
+      background-color: aquamarine;
+    }
   </style>
   

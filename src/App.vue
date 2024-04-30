@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <VueHeader msg="Welcome to Your Vue.js App"/>
+    <VueHeader/><VueBody/>
   </div>
 </template>
 
 <script>
 import VueHeader from './components/VueHeader.vue'
+import VueBody from './components/VueBody.vue'
 
 export default {
   name: 'App',
   components: {
-    VueHeader
+    VueHeader, VueBody
   }
 }
 </script>
