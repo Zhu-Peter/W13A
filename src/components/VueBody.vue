@@ -1,20 +1,7 @@
 <template>
   <div class="VueBody">
-    <h1>Title</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste omnis quia dolores quam eaque et enim inventore
-      repudiandae perspiciatis? Blanditiis, consectetur facilis. Cum voluptatem quam ratione et excepturi velit tempora
-      veniam temporibus magni dolorum. Debitis minus fugit dignissimos est. Quo veritatis temporibus, blanditiis maiores
-      ut reprehenderit tenetur. Dicta aspernatur officiis obcaecati eveniet perferendis beatae quibusdam ex a aliquid
-      tenetur, sequi consequuntur eius, excepturi omnis consectetur assumenda culpa laudantium sit ea iusto animi.
-      Pariatur accusantium omnis id ullam odit accusamus voluptatem, eum unde deserunt neque ut sequi possimus quo
-      sapiente cupiditate facere perferendis repudiandae necessitatibus fuga nesciunt itaque a asperiores temporibus?
-      Perferendis non, saepe vel accusamus sunt nihil consequatur dolore totam? Molestiae cupiditate, ullam veniam
-      tempora ex eum quidem veritatis in minima consectetur sapiente delectus, quod, culpa dolores? Unde odit enim
-      officiis illo accusantium eius iure adipisci repellat harum nostrum voluptates velit natus dolore, cum laudantium
-      repudiandae voluptas a qui vel impedit quam sunt vero porro esse. Vero facilis aliquam eius exercitationem,
-      voluptatibus distinctio ab nemo, vitae dolores ad magnam corrupti eaque. Laboriosam ipsum tempora ratione neque
-      ipsa sapiente quidem excepturi. Quod eius vero reiciendis nam. Voluptate eligendi libero mollitia esse eaque, enim
-      modi quo itaque illo dicta rerum, pariatur impedit!</p>
+    <h1 id="title">Title</h1>
+    <div id="num_friends"></div>
   </div>
 </template>
 
@@ -23,7 +10,30 @@ export default {
   name: 'VueBody',
   props: {
     msg: String
-  }
+  },
+  data: function() {
+    return {
+      tweets: ['aaaaaa', 'bbbbbb', 'ccccccc'],
+      num_friends: 1,
+      logged_in: true
+    }
+  },
+  methods: {
+    showInfo: function (){
+      document.getElementById(`num_friends`).insertAdjacentHTML(`beforeend`, `<span>number of friends: ${this.num_friends}</span>`)
+      if(this.logged_in){
+        document.getElementById(`num_friends`).insertAdjacentHTML(`beforeend`, `<h1>logged in</h1>`)
+      }
+      for(let i=0;i<this.tweets.length;i++){
+        document.getElementById(`num_friends`).insertAdjacentHTML(`beforeend`, `<p>${this.tweets[i]}</p>`);
+      }
+      // console.log(this.num_friends)
+    }
+  },
+  mounted () {
+      this.showInfo();
+    
+  },
 }
 </script>
 
