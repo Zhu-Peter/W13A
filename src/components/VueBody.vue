@@ -11,28 +11,28 @@ export default {
   props: {
     msg: String
   },
-  data: function() {
+  data: function () {
     return {
-      tweets: ['aaaaaa', 'bbbbbb', 'ccccccc'],
-      num_friends: 1,
+      tweets: ['aaaaaa', 'bbbbbbc', 'ccccccc'],
+      num_friends: 13,
       logged_in: true
     }
   },
   methods: {
-    showInfo: function (){
+    showInfo: function () {
       document.getElementById(`num_friends`).insertAdjacentHTML(`beforeend`, `<span>number of friends: ${this.num_friends}</span>`)
-      if(this.logged_in){
+      if (this.logged_in) {
         document.getElementById(`num_friends`).insertAdjacentHTML(`beforeend`, `<h1>logged in</h1>`)
-      }
-      for(let i=0;i<this.tweets.length;i++){
+      } else { return }
+      for (let i = 0; i < this.tweets.length; i++) {
         document.getElementById(`num_friends`).insertAdjacentHTML(`beforeend`, `<p>${this.tweets[i]}</p>`);
       }
       // console.log(this.num_friends)
     }
   },
-  mounted () {
-      this.showInfo();
-    
+  mounted() {
+    this.showInfo();
+
   },
 }
 </script>

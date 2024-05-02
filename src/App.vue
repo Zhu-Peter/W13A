@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <VueHeader/><VueBody/>
+    <VueHeader/><VueBody/><vueFooter/>
   </div>
 </template>
 
 <script>
 import VueHeader from './components/VueHeader.vue'
 import VueBody from './components/VueBody.vue'
+import VueFooter from './components/VueFooter'
 
 export default {
   name: 'App',
   components: {
-    VueHeader, VueBody
+    VueHeader, VueBody, VueFooter
   }
 }
 </script>
